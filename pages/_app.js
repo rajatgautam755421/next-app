@@ -7,20 +7,11 @@ import Router from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
-  const [number, setNumber] = useState(0);
 
   Router.events.on("routeChangeStart", () => {
     setLoading(true);
-    setNumber(10);
-    setNumber(20);
-    setNumber(30);
-    setNumber(40);
-    setNumber(50);
-    setNumber(60);
-    setNumber(70);
   });
   Router.events.on("routeChangeComplete", () => {
-    setNumber(100);
     setLoading(false);
   });
   return (
